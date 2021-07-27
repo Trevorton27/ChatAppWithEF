@@ -55,17 +55,17 @@ namespace ChatAppWithEF
             {
                 endpoints.MapControllers();
             });
-        
-            //app.UseSpa(spa =>
-            //{
-            //    spa.Options.SourcePath = "client";
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseReactDevelopmentServer(npmScript: "start");
-            //    }
-            //}
-            //);
-          //  chatAppDbContext.Database.Migrate();
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "client";
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            }
+            );
+            //  chatAppDbContext.Database.Migrate();
         }
     }
 }

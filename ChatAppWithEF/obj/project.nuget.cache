@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I7Pv6id5WqVeFTa6HD4c3k+WYccXwzBuS8ZU6RowPlywdqCipmIiUNBG95yqCXxX1wkNfPtCDFjMQY2L0EHCMA==",
+  "dgSpecHash": "a0QmRY2Zg3J619/tYU8oJIBnOu6Nrw4Cs9uEdGAYmsGf4Es1/oo/0JeEFvx0a3W0qxOsSZh38Ly/U8UfaOYjEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
+  "projectFilePath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\spira\\.nuget\\packages\\microsoft.aspnetcore.nodeservices\\3.1.0\\microsoft.aspnetcore.nodeservices.3.1.0.nupkg.sha512",
     "C:\\Users\\spira\\.nuget\\packages\\microsoft.aspnetcore.spaservices\\3.1.0\\microsoft.aspnetcore.spaservices.3.1.0.nupkg.sha512",

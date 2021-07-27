@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj": {}
+    "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj": {
+    "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
+        "projectUniqueName": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
         "projectName": "ChatAppWithEF",
-        "projectPath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
+        "projectPath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\ChatAppWithEF.csproj",
         "packagesPath": "C:\\Users\\spira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\ChatAppWithEF\\ChatAppWithEF\\obj\\",
+        "outputPath": "C:\\Users\\spira\\OneDrive\\Documents\\software-development-mastery-course\\C#\\cSharpChatApp\\EFChatApp\\ChatAppWithEF\\ChatAppWithEF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\spira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

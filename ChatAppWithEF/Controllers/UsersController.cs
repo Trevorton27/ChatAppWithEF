@@ -65,11 +65,18 @@ namespace ChatAppWithEF.Controllers
         
         [HttpPost]
         public IActionResult Post([FromBody] User user)
-        {
-            _chatAppDbContext.Users.Add(user);
-            _chatAppDbContext.SaveChanges();
-            return StatusCode(StatusCodes.Status201Created);
-
+        { 
+            if (_chatAppDbContext.Users.Any(u => u.Username == user.Username ))
+            {
+                throw new Exception("That user name already exists");
+            }
+            else
+            {
+                _chatAppDbContext.Users.Add(user);
+                _chatAppDbContext.SaveChanges();
+                return StatusCode(StatusCodes.Status201Created);
+            }
+           
         }
 
         [HttpDelete("{id}")]
