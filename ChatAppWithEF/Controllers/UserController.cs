@@ -11,11 +11,11 @@ namespace ChatAppWithEF.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : Controller
+    public class UserController : Controller
     {
         private ChatAppDbContext _chatAppDbContext;
 
-        public UsersController(ChatAppDbContext chatAppDbContext)
+        public UserController(ChatAppDbContext chatAppDbContext)
         {
             _chatAppDbContext = chatAppDbContext;
         }
@@ -52,9 +52,9 @@ namespace ChatAppWithEF.Controllers
             else
             {
                 updatedUser.Id = user.Id;
-                updatedUser.UserId = user.UserId;
                 updatedUser.Username = user.Username;
-                updatedUser.NewUsername = user.NewUsername;
+                updatedUser.FirstName = user.FirstName;
+                updatedUser.LastName = user.LastName;
                 updatedUser.Password = user.Password;
                 updatedUser.CreatedDate = user.CreatedDate;
                 _chatAppDbContext.SaveChanges();
@@ -62,22 +62,7 @@ namespace ChatAppWithEF.Controllers
             }
         }
 
-        
-        [HttpPost]
-        public IActionResult Post([FromBody] User user)
-        { 
-            if (_chatAppDbContext.Users.Any(u => u.Username == user.Username ))
-            {
-                throw new Exception("That user name already exists");
-            }
-            else
-            {
-                _chatAppDbContext.Users.Add(user);
-                _chatAppDbContext.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created);
-            }
-           
-        }
+   
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -91,7 +76,7 @@ namespace ChatAppWithEF.Controllers
             {
                 _chatAppDbContext.Users.Remove(user);
                 _chatAppDbContext.SaveChanges();
-                return Ok("This user has been deleted.");
+                return Ok(_chatAppDbContext.Users);
             }
         }
  

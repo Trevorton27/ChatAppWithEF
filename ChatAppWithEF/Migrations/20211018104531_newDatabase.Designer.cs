@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatAppWithEF.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    [Migration("20210723041532_messagesTableCreated")]
-    partial class messagesTableCreated
+    [Migration("20211018104531_newDatabase")]
+    partial class newDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,15 +21,30 @@ namespace ChatAppWithEF.Migrations
                 .HasAnnotation("ProductVersion", "3.1.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("ChatAppWithEF.Models.Message", b =>
+            modelBuilder.Entity("ChatAppWithEF.Models.Channel", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Channels");
+                });
+
+            modelBuilder.Entity("ChatAppWithEF.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int?>("ChannelId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Text")
                         .HasColumnType("text");
@@ -37,7 +52,9 @@ namespace ChatAppWithEF.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("text");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("ChannelId");
 
                     b.ToTable("Messages");
                 });
@@ -52,14 +69,17 @@ namespace ChatAppWithEF.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("NewUsername")
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
                         .HasColumnType("text");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Username")
                         .HasColumnType("text");
@@ -67,6 +87,13 @@ namespace ChatAppWithEF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ChatAppWithEF.Models.Message", b =>
+                {
+                    b.HasOne("ChatAppWithEF.Models.Channel", null)
+                        .WithMany("Messages")
+                        .HasForeignKey("ChannelId");
                 });
 #pragma warning restore 612, 618
         }

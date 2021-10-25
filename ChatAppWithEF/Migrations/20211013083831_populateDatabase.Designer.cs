@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ChatAppWithEF.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    [Migration("20210723041309_messageTableCreated")]
-    partial class messageTableCreated
+    [Migration("20211013083831_populateDatabase")]
+    partial class populateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,13 +23,10 @@ namespace ChatAppWithEF.Migrations
 
             modelBuilder.Entity("ChatAppWithEF.Models.Message", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Text")
                         .HasColumnType("text");
@@ -37,9 +34,27 @@ namespace ChatAppWithEF.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("text");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("ChatAppWithEF.Models.Session", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("ChatAppWithEF.Models.User", b =>
@@ -52,14 +67,14 @@ namespace ChatAppWithEF.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("NewUsername")
+                    b.Property<string>("FirstName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("text");
 
                     b.Property<string>("Password")
                         .HasColumnType("text");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Username")
                         .HasColumnType("text");

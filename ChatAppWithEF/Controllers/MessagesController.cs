@@ -70,7 +70,7 @@ namespace ChatAppWithEF.Controllers
             else
             {
              
-                updatedMessage.UserId = message.UserId;
+                updatedMessage.Id = message.Id;
                 updatedMessage.Username = message.Username;
                 updatedMessage.Text = message.Text;
                 _chatAppDbContext.SaveChanges();

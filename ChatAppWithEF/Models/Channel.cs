@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace ChatAppWithEF.Models
 {
-    public class Session
+    public class Channel
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public DateTime CreatedDate { get; set; }
-
+        public string Name { get; set; }
+        public ICollection<Message> Messages { get; set; }
     }
 }

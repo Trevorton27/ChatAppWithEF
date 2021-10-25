@@ -2,7 +2,7 @@
 
 namespace ChatAppWithEF.Migrations
 {
-    public partial class messagesTableCreated : Migration
+    public partial class newDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
